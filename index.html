@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mousey's Staff Craft Shift</title>
+<style>
+:root{--bg:#07101c;--panel:#0e1928;--panel2:#111f31;--line:#22354b;--text:#f5f8fc;--muted:#8fa3bb;--blue:#5aa9ff;--cyan:#55ded3;--green:#57d68b;--amber:#ffc967;--red:#ff7182;--r:14px;--shadow:0 14px 40px #0005}
+*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:radial-gradient(circle at 10% -20%,#18375f 0,transparent 38%),var(--bg);color:var(--text);font:13px/1.35 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;overflow:hidden}button,input{font:inherit}.app{height:100vh;max-width:1700px;margin:auto;padding:14px;display:flex;flex-direction:column;gap:10px}.top{height:52px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{display:flex;align-items:center;gap:11px}.logo{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;font-size:18px;font-weight:950;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#06111d;box-shadow:0 8px 24px #43a8ff25}.brand h1{font-size:18px;margin:0}.brand p{margin:1px 0 0;color:var(--muted);font-size:11px}.btn{border:1px solid var(--line);background:#13243a;color:var(--text);padding:8px 11px;border-radius:9px;cursor:pointer;font-weight:800}.btn:hover{background:#19304c}.primary{border:0;background:linear-gradient(135deg,var(--blue),#7770ff);color:white}.good{border:0;background:linear-gradient(135deg,#2fbf74,var(--cyan));color:#04140d}.danger{color:#ffb8c0}.card{background:linear-gradient(180deg,#101d2eee,#0c1726ee);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}.shiftbar{min-height:50px;padding:8px 10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}.shiftbar input{background:#081421;border:1px solid var(--line);color:var(--text);padding:8px 10px;border-radius:9px;width:180px}.pill{padding:6px 9px;border-radius:999px;background:#081522;border:1px solid var(--line);color:var(--muted);font-size:11px;white-space:nowrap}.pill b{color:var(--text)}.layout{min-height:0;flex:1;display:grid;grid-template-columns:minmax(610px,1.25fr) minmax(430px,.75fr);gap:10px}.section{padding:12px;min-height:0}.planner{display:flex;flex-direction:column;min-height:0}.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}.sectionhead h2{font-size:14px;margin:0}.sectionhead span{font-size:11px;color:var(--muted)}.filters{display:flex;gap:5px;margin-bottom:8px}.filter,.tab{padding:6px 9px;border-radius:8px;border:1px solid var(--line);background:#091625;color:var(--muted);cursor:pointer;font-weight:750;font-size:11px}.filter.on,.tab.on{background:#1b3a5d;color:#fff;border-color:#4179aa}.goods{min-height:0;overflow:auto;padding-right:3px;display:grid;gap:7px}.catgroup{border:1px solid var(--line);border-radius:11px;background:#091522;overflow:hidden}.cathead{padding:7px 9px;font-size:10px;text-transform:uppercase;letter-spacing:.9px;color:#9cc9f6;font-weight:900;background:#0c1b2c;border-bottom:1px solid var(--line)}.catitems{padding:6px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px}.gooditem{min-width:0;padding:6px;border:1px solid #1e3248;border-radius:9px;background:#0b1827;display:flex;align-items:center;justify-content:space-between;gap:5px}.goodname{font-weight:750;font-size:11px;line-height:1.15;overflow:hidden;text-overflow:ellipsis}.goodtitle{display:flex;align-items:center;gap:4px;min-width:0}.infoBtn{width:20px;height:20px;flex:0 0 20px;border:1px solid #35516f;border-radius:50%;background:#10243a;color:#9fd1ff;font-weight:900;font-size:11px;line-height:18px;padding:0;cursor:pointer}.infoBtn:hover{background:#1b3a5d;color:#fff}.qtyctl{display:grid;grid-template-columns:24px 35px 24px;gap:2px;flex:0 0 auto}.qtyctl button{height:25px;border:1px solid var(--line);background:#152b45;color:white;border-radius:6px;cursor:pointer;padding:0}.qtyctl input{width:35px;height:25px;text-align:center;background:#06111d;border:1px solid var(--line);color:white;border-radius:6px;padding:1px;font-size:11px;font-weight:850}.rightcol{min-height:0;display:flex;flex-direction:column}.tabs{display:flex;gap:4px;padding:7px 7px 0;overflow-x:auto}.tab{white-space:nowrap}.tabpanel{display:none;min-height:0;flex:1}.tabpanel.on{display:flex;flex-direction:column}.combinedWork{display:flex;flex-direction:column;gap:8px;min-height:0;flex:1}.combinedWork>.workHalf:first-child{max-height:none;flex:1;min-height:0}.combinedWork>.workHalf:first-child .panelbody{max-height:none;overflow:auto;flex:1;min-height:0}.combinedWork>.needHalf{min-height:0;overflow:hidden;flex:1}.combinedWork>.needHalf .panelbody{flex:1;min-height:0;overflow:auto}.workHalf{min-height:0;display:flex;flex-direction:column;padding-bottom:2px}.workHalf+.workHalf{border-top:1px solid var(--line);padding-top:8px}.workHalf .panelbody{min-height:0;overflow:auto}.panelbody{min-height:0;overflow:auto;padding-right:3px}.tasklist{display:grid;gap:5px}.task{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:8px;align-items:center;padding:8px 9px;border:1px solid var(--line);border-radius:9px;background:#091522}.task.done{opacity:.46}.task.done .taskname{text-decoration:line-through}.check{width:18px;height:18px;accent-color:#45d28b}.taskname{font-weight:780;font-size:12px}.taskmeta{font-size:10px;color:var(--muted);margin-top:1px}.badge{padding:4px 7px;border-radius:7px;background:#183451;color:#c2e1ff;font-weight:900;font-size:11px;white-space:nowrap}.raw .badge{background:#283a1c;color:#d9f4b4}.empty{padding:16px;text-align:center;border:1px dashed var(--line);border-radius:9px;color:var(--muted);font-size:11px}.notice{padding:7px 9px;border-radius:8px;background:#282311;border:1px solid #51451f;color:#ffe1a0;font-size:10px;margin-bottom:7px}.totals{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:8px}.stat{background:#091522;border:1px solid var(--line);border-radius:9px;padding:7px}.stat small{display:block;color:var(--muted);font-size:8px;text-transform:uppercase;letter-spacing:.6px}.stat strong{font-size:15px}.footerActions{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}.summary{white-space:pre-wrap;background:#06111d;border:1px solid var(--line);padding:10px;border-radius:9px;color:#dce7f5;overflow:auto;font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;min-height:120px}.hidden{display:none!important}.righthead{padding:9px 11px 0}.righthead h2{font-size:14px;margin:0}.righthead p{font-size:10px;color:var(--muted);margin:2px 0 0}.countline{display:flex;gap:5px;flex-wrap:wrap;margin:8px 0}.mobileOnly{display:none}.modalBack{position:fixed;inset:0;background:#020711cc;display:grid;place-items:center;padding:18px;z-index:1000}.modal{width:min(620px,100%);max-height:min(82vh,760px);overflow:auto;background:#0d1928;border:1px solid #2b435e;border-radius:16px;box-shadow:0 24px 80px #000b}.modalHead{position:sticky;top:0;background:#0d1928f5;backdrop-filter:blur(10px);padding:14px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;z-index:2}.modalHead h3{margin:0;font-size:16px}.closeInfo{width:30px;height:30px;border:1px solid var(--line);border-radius:8px;background:#14263b;color:#fff;cursor:pointer;font-size:18px}.modalBody{padding:14px 16px 17px}.recipeBlock{margin-bottom:14px}.recipeBlock:last-child{margin-bottom:0}.recipeBlock h4{font-size:11px;text-transform:uppercase;letter-spacing:.7px;color:#9cc9f6;margin:0 0 6px}.recipeRows{border:1px solid var(--line);border-radius:10px;overflow:hidden}.recipeRow{display:flex;justify-content:space-between;gap:14px;padding:7px 9px;background:#091522;border-bottom:1px solid #1b2d42}.recipeRow:last-child{border-bottom:0}.recipeRow span:last-child{font-weight:900;color:#c2e1ff;white-space:nowrap}.recipeArrow{font-size:10px;color:var(--muted);margin-left:8px}.recipeNote{font-size:10px;color:var(--muted);margin-top:6px}
+.ingredientCard{border:1px solid var(--line);border-radius:10px;background:#091522;padding:9px;display:grid;gap:7px}.ingredientTop,.stockOnly{display:flex;align-items:center;justify-content:space-between;gap:10px}.ingredientType{font-size:8px;font-weight:950;letter-spacing:.8px;color:#8fa3bb;margin-bottom:2px}.prepCard .ingredientType{color:var(--amber)}.stockOnly .ingredientType{color:var(--cyan)}.decision{display:grid;grid-template-columns:1fr 1fr;gap:6px}.decisionBtn{border:1px solid #35516f;background:#102033;color:#b9c9da;border-radius:8px;padding:7px;cursor:pointer;font-weight:850;font-size:10px}.decisionBtn:hover{background:#17304b}.decisionBtn.active{border-color:#57d68b;background:#123526;color:#bff5d4}.decisionBtn.make.active{border-color:#5aa9ff;background:#153657;color:#d5eaff}.makeBox{border:1px solid #31597e;background:#0c2034;border-radius:9px;padding:8px}.makeTitle{font-size:9px;font-weight:950;letter-spacing:.55px;color:#8fc9ff}.rawNeed{font-size:11px;margin:3px 0 7px;color:#dbe8f5}.madeCheck{display:grid;grid-template-columns:18px 1fr auto;gap:7px;align-items:center;padding:7px;border-radius:7px;background:#081522;cursor:pointer}.madeCheck input{width:17px;height:17px;accent-color:#45d28b}.madeCheck strong{color:#9fd1ff}.prepCard.making{border-color:#31597e}.prepCard.fromStock{border-color:#28543d}.needHalf .panelbody{padding-bottom:4px}
+/* Compact production rows: stock is assumed unless Make is selected. */
+.needRow{border:1px solid var(--line);border-radius:8px;background:#091522;overflow:hidden}.needMain{min-height:38px;padding:5px 7px;display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:7px}.needIdentity{min-width:0;display:flex;align-items:center;gap:7px}.needIdentity .ingredientType{margin:0;flex:0 0 auto}.needIdentity .taskname{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.needMeta{font-size:9px;color:var(--muted);white-space:nowrap}.makeMini{border:1px solid #35516f;background:#102033;color:#cfe3f7;border-radius:6px;padding:4px 8px;cursor:pointer;font-size:9px;font-weight:900}.makeMini:hover{background:#17304b}.makeMini.active{background:#153657;border-color:#5aa9ff;color:#fff}.needExpand{border-top:1px solid #29445f;background:#0b1d30;padding:7px 8px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px;align-items:center}.needExpand .rawNeed{margin:0;font-size:10px}.needExpand .madeCheck{padding:5px 7px;min-width:170px}.prepCompact{border:1px solid var(--line);border-radius:8px;background:#091522;padding:6px 8px;display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:7px;align-items:center}.prepCompact.done{opacity:.5}.prepCompact .prepDetails{min-width:0}.prepCompact .prepRaw{font-size:9px;color:#9fd1ff;margin-top:2px}.prepCompact .check{margin:0}.needHalf .tasklist,.tabpanel[data-panel="prep"] .tasklist{gap:4px}
+@media(max-width:1250px){.catitems{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:1000px){body{overflow:auto}.app{height:auto;min-height:100vh}.layout{grid-template-columns:1fr}.goods{max-height:none;overflow:visible}.rightcol{min-height:560px}.catitems{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:650px){
+  body{overflow:hidden}.app{height:100dvh;min-height:0;padding:7px;gap:7px}.top{height:42px;flex:0 0 42px}.logo{width:32px;height:32px;border-radius:9px}.brand h1{font-size:15px}.brand p{display:none}.top .btn{padding:7px 9px;font-size:11px}
+  .shiftbar{min-height:42px;flex:0 0 auto;padding:6px;display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:5px}.shiftbar input{width:100%;min-width:0;padding:7px 8px}.shiftbar .pill{padding:5px 7px}.shiftbar .pill:nth-of-type(2){display:none}.shiftbar #resetShift{grid-column:1/-1;padding:6px}
+  .layout{min-height:0;flex:1;display:flex;flex-direction:column;gap:7px;overflow:hidden}.planner{flex:0 0 auto;padding:8px}.planner .sectionhead{margin-bottom:5px}.planner .sectionhead span{display:none}.filters{margin-bottom:5px;overflow-x:auto;scrollbar-width:none}.filters::-webkit-scrollbar,.tabs::-webkit-scrollbar{display:none}.filter{padding:6px 10px;white-space:nowrap}.goods{max-height:29dvh;overflow:auto;overscroll-behavior:contain}.catgroup{border-radius:9px}.cathead{padding:5px 7px}.catitems{grid-template-columns:repeat(2,minmax(0,1fr));padding:4px;gap:4px}.gooditem{padding:5px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px}.goodname{font-size:10px}.qtyctl{margin:0;grid-template-columns:22px 32px 22px}.qtyctl button,.qtyctl input{height:24px}.qtyctl input{width:32px}
+  .rightcol{flex:1;min-height:0;overflow:hidden}.combinedWork>.workHalf:first-child{max-height:none;min-height:0;flex:1}.combinedWork>.workHalf:first-child .panelbody{max-height:none;min-height:0;flex:1}.combinedWork>.needHalf{min-height:0;flex:1}.righthead{padding:7px 8px 0}.righthead h2{font-size:12px}.righthead p{display:none}.countline{margin:5px 0}.tabs{padding:5px 6px 0;flex:0 0 auto}.tab{padding:6px 8px}.tabpanel.on{min-height:0;overflow:hidden}.tabpanel.section{padding:7px}.tabpanel .sectionhead{margin-bottom:5px}.tabpanel .sectionhead span{display:none}.panelbody{overflow:auto;overscroll-behavior:contain}.task{padding:7px;gap:6px}.taskname{font-size:11px}.taskmeta{font-size:9px}.notice{padding:5px 7px;margin-bottom:5px}.totals{grid-template-columns:repeat(4,1fr);gap:3px;margin-bottom:5px}.stat{padding:5px}.stat strong{font-size:13px}.stat small{font-size:7px}.footerActions{margin-bottom:5px}.summary{min-height:80px;font-size:10px;padding:7px}
+}
+@media(max-width:650px){.modalBack{padding:0;place-items:stretch}.modal{width:100%;height:100dvh;max-height:none;border-radius:0;border:0}.modalHead{padding:12px}.modalBody{padding:12px}.infoBtn{width:22px;height:22px;flex-basis:22px}}
+
+/* Hide native number-input spinner arrows; quantity is controlled by our +/- buttons. */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.itemIngredientBucket{border:1px solid var(--line);border-radius:9px;background:#081421;overflow:hidden}.itemIngredientHead{padding:6px 8px;background:#0d1c2d;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:8px}.itemIngredientHead strong{font-size:11px;color:#fff}.itemIngredientHead span{font-size:9px;color:var(--muted)}.itemIngredientRows{display:grid}.itemIngredientRows .needRow{border:0;border-radius:0;border-bottom:1px solid #1c344b}.itemIngredientRows .needRow:last-child{border-bottom:0}.sharedTotal{font-size:8px;color:#8fc9ff;white-space:nowrap}.needQtyWrap{display:flex;align-items:center;gap:5px}.needQtyWrap .badge{white-space:nowrap}@media(max-width:700px){.itemIngredientHead{padding:5px 7px}.itemIngredientHead strong{font-size:10px}.sharedTotal{display:none}}
+
+.itemIngredientHead{cursor:pointer;user-select:none}.itemIngredientComplete{display:flex;align-items:center;gap:7px;flex:0 0 auto}.itemIngredientComplete .check{width:18px;height:18px;margin:0;cursor:pointer;accent-color:#2dd4bf}.itemIngredientComplete .badge{font-size:10px}.itemIngredientHeadRight{display:flex;align-items:center;gap:7px}.itemIngredientHeadRight>span{white-space:nowrap}.itemIngredientHead:hover{background:#11253a}.itemIngredientHeadLeft{display:flex;align-items:center;gap:7px;min-width:0}.collapseBtn{width:20px;height:20px;border:1px solid #35516f;border-radius:6px;background:#10243a;color:#bfe0ff;display:grid;place-items:center;padding:0;cursor:pointer;font-size:11px;font-weight:900;flex:0 0 20px}.itemIngredientBucket.collapsed .itemIngredientRows,.itemIngredientBucket.collapsed .embeddedFinish{display:none}.itemIngredientBucket.collapsed .itemIngredientHead{border-bottom:0}.itemIngredientBucket.collapsed .collapseBtn{transform:rotate(-90deg)}
+</style>
+</head>
+<body><div class="app">
+<div class="top"><div class="brand"><div class="logo">M</div><div><h1>Mousey's Staff Craft Shift</h1><p>Plan the craft, replenish prep stock, track the shift.</p></div></div><button class="btn primary" id="newShift">+ New Shift</button></div>
+<div class="card shiftbar"><input id="staff" placeholder="Staff name / callsign"><span class="pill">Status: <b id="status">No shift</b></span><span class="pill">Started: <b id="started">—</b></span><span class="pill">Elapsed: <b id="elapsed">00:00:00</b></span><button class="btn danger hidden" id="resetShift">Reset Shift</button></div>
+<div id="recipeModal" class="modalBack hidden" role="dialog" aria-modal="true"><div class="modal"><div class="modalHead"><h3 id="recipeTitle">Item details</h3><button class="closeInfo" id="closeInfo" aria-label="Close">×</button></div><div class="modalBody" id="recipeBody"></div></div></div>
+<div id="inactive" class="card section"><div class="empty">Click <b>New Shift</b> to start planning today's craft.</div></div>
+<div id="workspace" class="layout hidden">
+<section class="card section planner">
+  <div class="sectionhead"><div><h2>What are we making?</h2><span>Set quantities here. Everything else updates automatically.</span></div><button class="btn" id="clearQty">Clear</button></div>
+  <div class="filters" id="filters"></div>
+  <div class="goods" id="goods"></div>
+</section>
+<section class="card rightcol">
+  <div class="righthead"><h2>Shift Workboard</h2><p>Work left to right: craft goods, check ingredients, then replenish prep stock.</p>
+    <div class="countline"><span class="pill">Finished <b id="fgDone">0</b>/<b id="fgTotal">0</b></span><span class="pill">Prep <b id="prepDone">0</b>/<b id="prepTotal">0</b></span></div>
+  </div>
+  <div class="tabs" id="workTabs">
+    <button class="tab on" data-tab="craft">Craft Queue + Ingredients Needed</button>
+    <button class="tab" data-tab="prep">Replenish Prep</button>
+    <button class="tab" data-tab="raw">Raw Shopping</button>
+    <button class="tab" data-tab="sum">Shift Summary</button>
+  </div>
+  <section class="section tabpanel on" data-panel="craft"><div class="combinedWork"><div class="workHalf needHalf"><div class="sectionhead"><div><h2>Craft Queue + Ingredients Needed</h2><span>Each finished-good batch includes its ingredient requirements. Tick the batch when it is finished.</span></div></div><div class="panelbody"><div class="tasklist" id="remainingIngredients"></div></div></div></div></section>
+  <section class="section tabpanel raw" data-panel="prep"><div class="sectionhead"><div><h2>Prep Stock to Replenish</h2><span>Tick only what you actually craft.</span></div></div><div class="notice">Ingredient requirements are shown under each prep item. Tick only what you actually craft.</div><div class="panelbody"><div class="tasklist" id="prepTasks"></div></div></section>
+  <section class="section tabpanel" data-panel="raw"><div class="sectionhead"><div><h2>Raw Ingredients Required</h2><span>Bought/raw inputs if all required prep is made.</span></div></div><div class="panelbody"><div class="tasklist" id="rawList"></div></div></section>
+  <section class="section tabpanel" data-panel="sum"><div class="sectionhead"><div><h2>Shift Summary</h2><span>Finish and copy straight into Discord.</span></div></div><div class="totals"><div class="stat"><small>Finished</small><strong id="sFinished">0</strong></div><div class="stat"><small>Prep</small><strong id="sPrep">0</strong></div><div class="stat"><small>Actions</small><strong id="sActions">0</strong></div><div class="stat"><small>Planned</small><strong id="sPlanned">0</strong></div></div><div class="footerActions"><button class="btn good" id="finish">Finish Shift</button><button class="btn" id="copy">Copy Discord Summary</button></div><div id="summary" class="summary hidden"></div></section>
+</section>
+</div></div>
+<script>
+// ---------------- DATA ----------------
+// Menu BOM: finished item -> direct ingredients.
+const MENU={
+"Mousey BLT Pizza":{c:"Pizza",i:{"Raw Pizza Base":1,"Tomato":1,"Shredded Cheese":1,"Bacon":2,"Cut Lettuce":1,"Tomato Sauce":1}},
+"Mousey Breakfast Pizza":{c:"Pizza",i:{"Raw Pizza Base":1,"Cooked Sausages":1,"Shredded Cheese":1,"Bacon":1,"Sliced Mushrooms":1,"Tomato Sauce":1}},
+"Mousey Capricciosa Pizza":{c:"Pizza",i:{"Raw Pizza Base":1,"Shredded Cheese":1,"Sliced Mushrooms":1,"Shredded Ham":1,"Tomato Sauce":1}},
+"Mousey Deer Pizza":{c:"Pizza",i:{"Raw Pizza Base":1,"Shredded Cheese":1,"Deer Patty":1,"Tomato Sauce":1}},
+"Mousey Kahuna Pizza":{c:"Pizza",i:{"Raw Pizza Base":1,"Shredded Cheese":1,"Shredded Ham":1,"BBQ Sauce":1,"Tomato Sauce":1}},
+"Mousey Prosciutto Pizza":{c:"Pizza",i:{"Raw Pizza Base":1,"Shredded Cheese":1,"Shredded Ham":1,"Tomato Sauce":1}},
+"Mousey Quattro Pizza":{c:"Pizza",i:{"Raw Pizza Base":1,"Shredded Cheese":4,"Tomato Sauce":1}},
+"Mousey Tandori Pizza":{c:"Pizza",i:{"Raw Pizza Base":1,"Shredded Cheese":1,"Packaged Chicken":1,"Tomato Sauce":1}},
+"Mousey Tuna Pizza":{c:"Pizza",i:{"Raw Pizza Base":1,"Cooked Fish":1,"Shredded Cheese":1,"Diced Onions":1,"Tomato Sauce":1}},
+"Mousey Brusschetta":{c:"Side",i:{"Raw Dough":1,"Tomato":1,"Tomato Sauce":2}},"Mousey Fries":{c:"Side",i:{"Raw Fries":2,"Shredded Cheese":1,"Bacon":1}},"Mousey Mac n Cheese":{c:"Side",i:{"Shredded Cheese":2,"Spaghetti":1}},"Mousey Ravioli Soup":{c:"Side",i:{"Cooked Ground Beef":1,"Lasagna Pasta":1,"Tomato Sauce":1}},
+"Mousey Pasta Fazool":{c:"Pasta",i:{"Tomato Sauce":3,"Spaghetti":1}},"Mousey Primavera":{c:"Pasta",i:{"Shredded Cheese":1,"Spaghetti":1,"Potato":1,"Tomato Sauce":1}},
+"Mousey Cheesecake":{c:"Dessert",i:{"Shredded Cheese":1,"Raw Dough":1,"Strawberry Sauce":2}},"Mousey Donuts":{c:"Dessert",i:{"Raw Dough":1,"Sugar":1,"Icing":1}},"Mousey Icecream":{c:"Dessert",i:{"Chocolate Icecream":1,"Caramel Sauce":1,"Vanilla Icecream":1}},"Mousey Tiramisu":{c:"Dessert",i:{"Brownie Batter":1,"Chocolate":1}},
+"Mousey Coffee":{c:"Drink",i:{"Coffee Beans":1,"Milk":1}},"Mousey Affogato":{c:"Drink",i:{"Mousey Coffee":1,"Milk":1,"Sugar Syrup":1,"Vanilla Icecream":1}},"Mousey Milkshake":{c:"Drink",i:{"Milk":1,"Banana":1,"Icing":1,"Sugar Syrup":1,"Vanilla Icecream":1}},"Mousey Reviver":{c:"Drink",i:{"Energy Drink":1,"Sugar Syrup":1,"Strawberry Sauce":1,"Lemonade":1}},"Mousey Ring King":{c:"Drink",i:{"Energy Drink":1,"Lemonade":1,"Sugar Syrup":2,"Vanilla Icecream":1}},"Grape Dirty Soda":{c:"Drink",i:{"Lemonade":1,"Sugar":1,"Sugar Syrup":1,"Chardonnay Grape":1}},"Mango Dirty Soda":{c:"Drink",i:{"Lemonade":1,"Sugar":2,"Orange":1}},"Melon Dirty Soda":{c:"Drink",i:{"Lemonade":1,"Sugar":1,"Sugar Syrup":1,"Kiwi":1}},"Strawberry Dirty Soda":{c:"Drink",i:{"Strawberry":1,"Sugar":2,"Sugar Syrup":1,"Lemonade":1}}
+};
+// Prep recipe values are [ingredients consumed per craft, output quantity per craft].
+const PREP={
+"Cooked Ground Beef":[{"Ground Beef":1},1],"Cooked Sausages":[{"Raw Sausages":1},1],"Sliced Mushrooms":[{"Mushrooms":15},3],"Spaghetti":[{"Raw Dough":3},3],"Lasagna Pasta":[{"Raw Dough":3},3],"Raw Pizza Base":[{"Raw Dough":1},1],"Tomato Sauce":[{"Tomato":10},2],"Bacon":[{"Raw Bacon":1},1],"Deer Patty":[{"Raw Deer Patty":1},1],"Strawberry Sauce":[{"Sugar":1,"Strawberries":1},1],"Whipped Cream":[{"Milk":1,"Sugar":1},1],"Brownie Batter":[{"Chocolate":2,"Raw Dough":1,"Sugar":1},1],"Icing":[{"Milk":1,"Sugar":1},1],"Sugar Syrup":[{"Jug of Water":1,"Sugar":1},1],"Cut Lettuce":[{"Lettuce":1},8],"Diced Onions":[{"Onion":1},1],"Sliced Tomato":[{"Tomato":1},1],"Raw Fries":[{"Potato":1},1],"Potato Flour":[{"Potato":2},1]
+};
+const MENU_OUTPUTS=new Set(Object.keys(MENU));
+const GROUPS={"Mains":["Pizza","Pasta"],"Sides":["Side"],"Desserts":["Dessert"],"Drinks":["Drink"]};
+const cats=["All","Mains","Sides","Desserts","Drinks"];
+const uiGroup=c=>Object.entries(GROUPS).find(([,arr])=>arr.includes(c))?.[0]||c;
+const S={active:false,start:null,end:null,staff:"",qty:{},fgDone:{},prepDone:{},prepChoice:{},replenishQty:{},completedFG:[],completedPrep:[],stockUsed:[],cat:"All"};
+const save=()=>localStorage.setItem("mouseys_staff_shift_v1",JSON.stringify(S));
+function load(){try{Object.assign(S,JSON.parse(localStorage.getItem("mouseys_staff_shift_v1")||"{}"));if(!Array.isArray(S.completedFG))S.completedFG=[];if(!Array.isArray(S.completedPrep))S.completedPrep=[];if(!Array.isArray(S.stockUsed))S.stockUsed=[];if(!S.prepChoice)S.prepChoice={};if(!S.replenishQty)S.replenishQty={}}catch{}}
+const nfmt=n=>Number.isInteger(n)?String(n):n.toFixed(2).replace(/\.00$/,'');
+function add(obj,k,v){obj[k]=(obj[k]||0)+v}
+// Calculate direct prep demand from all selected finished goods.
+function plan(){const prep={},raw={};
+  function consume(name,qty){
+    // A menu item used as an ingredient (Mousey Coffee in Affogato) is expanded as a finished recipe.
+    if(MENU[name]){Object.entries(MENU[name].i).forEach(([x,q])=>consume(x,q*qty));return}
+    if(PREP[name]){add(prep,name,qty);return}
+    add(raw,name,qty)
+  }
+  Object.entries(S.qty).forEach(([name,q])=>{if(q>0)Object.entries(MENU[name].i).forEach(([x,a])=>consume(x,a*q))});
+  // Convert required prep outputs into craft batches and recursively expose their purchased ingredients.
+  const rawAll={...raw};
+  function expandPrep(name,needed){const [ins,out]=PREP[name];const batches=Math.ceil(needed/out);Object.entries(ins).forEach(([x,q])=>{if(PREP[x])expandPrep(x,q*batches);else add(rawAll,x,q*batches)})}
+  Object.entries(prep).forEach(([x,q])=>expandPrep(x,q));
+  return {prep,raw:rawAll};
+}
+S.collapsedFG=S.collapsedFG||{};
+function render(){document.querySelector('#inactive').classList.toggle('hidden',S.active);document.querySelector('#workspace').classList.toggle('hidden',!S.active);document.querySelector('#resetShift').classList.toggle('hidden',!S.active);document.querySelector('#status').textContent=S.active?(S.end?'Finished':'Active'):'No shift';document.querySelector('#started').textContent=S.start?new Date(S.start).toLocaleString():'—';document.querySelector('#staff').value=S.staff||'';if(!S.active)return;
+  filters.innerHTML=cats.map(c=>`<button class="filter ${S.cat===c?'on':''}" data-cat="${c}">${c}</button>`).join('');
+  document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{S.cat=b.dataset.cat;save();render()});
+  const visibleGroups=S.cat==='All'?Object.keys(GROUPS):[S.cat];goods.innerHTML=visibleGroups.map(group=>{const items=Object.entries(MENU).filter(([,v])=>uiGroup(v.c)===group);return `<div class="catgroup"><div class="cathead">${group}</div><div class="catitems">${items.map(([name,v])=>`<div class="gooditem"><div class="goodtitle"><button class="infoBtn" data-info="${name}" title="View recipe">i</button><div class="goodname">${name}</div></div><div class="qtyctl"><button data-minus="${name}">−</button><input type="number" min="0" value="${S.qty[name]||0}" data-qty="${name}"><button data-plus="${name}">+</button></div></div>`).join('')}</div></div>`}).join('');
+  document.querySelectorAll('[data-info]').forEach(b=>b.onclick=()=>showRecipe(b.dataset.info));document.querySelectorAll('[data-minus]').forEach(b=>b.onclick=()=>setQty(b.dataset.minus,(S.qty[b.dataset.minus]||0)-1));document.querySelectorAll('[data-plus]').forEach(b=>b.onclick=()=>setQty(b.dataset.plus,(S.qty[b.dataset.plus]||0)+1));document.querySelectorAll('[data-qty]').forEach(i=>i.onchange=()=>setQty(i.dataset.qty,+i.value));
+  const selected=Object.entries(S.qty).filter(([,q])=>q>0);
+  // Keep ingredient requirements grouped under each unfinished finished-good batch,
+  // while also calculating shared totals across the whole outstanding queue.
+  const unfinished=selected.filter(([name])=>!S.fgDone[name]);
+  const remainingDirect={};
+  unfinished.forEach(([name,q])=>Object.entries(MENU[name].i).forEach(([ing,amt])=>add(remainingDirect,ing,amt*q)));
+  const ingredientUseCount={};
+  unfinished.forEach(([name])=>Object.keys(MENU[name].i).forEach(ing=>ingredientUseCount[ing]=(ingredientUseCount[ing]||0)+1));
+  function ingredientRow(name,q){
+    const total=remainingDirect[name]||q;
+    const shared=ingredientUseCount[name]>1;
+    const totalLabel=shared?`<span class="sharedTotal">(${nfmt(total)}x total)</span>`:'';
+    if(!PREP[name])return `<div class="needRow"><div class="needMain"><div class="needIdentity"><div class="ingredientType" style="color:var(--cyan)">STOCK</div><div class="taskname">${name}</div></div><div class="needMeta">Grab from stock</div><div class="needQtyWrap"><div class="badge">${nfmt(q)}x</div>${totalLabel}</div></div></div>`;
+    const choice=S.prepChoice[name]||'stock', [ins,out]=PREP[name];
+    // Make always acts on the combined outstanding requirement, not just this item's share.
+    const batches=Math.ceil(total/out), made=batches*out, raw={};
+    Object.entries(ins).forEach(([x,a])=>add(raw,x,a*batches));
+    const rawText=Object.entries(raw).map(([x,a])=>`${nfmt(a)} × ${x}`).join(' + ');
+    return `<div class="needRow ${choice==='make'?'making':''}"><div class="needMain"><div class="needIdentity"><div class="ingredientType" style="color:var(--amber)">PREP</div><div class="taskname">${name}</div></div><div class="needMeta">${Math.ceil(q/out)} craft${Math.ceil(q/out)===1?'':'s'}</div><div style="display:flex;align-items:center;gap:5px"><div class="needQtyWrap"><div class="badge">${nfmt(q)}x</div>${totalLabel}</div><button class="makeMini ${choice==='make'?'active':''}" data-make="${name}">${choice==='make'?'Making':'Make'}</button></div></div>${choice==='make'?`<div class="needExpand"><div><div class="makeTitle">MAKE ${nfmt(made)} ${name.toUpperCase()} <span style="color:#8fa3bb">(TOTAL)</span></div><div class="rawNeed">Requires <b>${rawText}</b></div></div><label class="madeCheck"><input type="checkbox" data-madeprep="${name}" ${S.prepDone[name]?'checked':''}> <span>${S.prepDone[name]?'Crafted':'Mark crafted'}</span><strong>${nfmt(made)}x</strong></label></div>`:''}</div>`;
+  }
+  remainingIngredients.innerHTML=unfinished.length?unfinished.map(([fg,q])=>{
+    const rows=Object.entries(MENU[fg].i).sort((a,b)=>a[0].localeCompare(b[0])).map(([ing,amt])=>ingredientRow(ing,amt*q)).join('');
+    const collapsed=!!S.collapsedFG[fg];
+    return `<div class="itemIngredientBucket ${collapsed?'collapsed':''}"><div class="itemIngredientHead" data-collapse-fg="${fg}" title="${collapsed?'Expand':'Collapse'} ${fg}"><div class="itemIngredientHeadLeft"><button class="collapseBtn" type="button" aria-label="${collapsed?'Expand':'Collapse'} ${fg}">▼</button><strong>${fg}</strong></div><div class="itemIngredientHeadRight"><span>${nfmt(q)} to craft</span><label class="itemIngredientComplete" title="Mark ${nfmt(q)} ${fg} crafted"><input class="check" type="checkbox" data-check="fg|${fg}"><span class="badge">Done</span></label></div></div><div class="itemIngredientRows">${rows}</div></div>`;
+  }).join(''):`<div class="empty">No outstanding finished goods — ingredient list is clear.</div>`;
+  document.querySelectorAll('[data-collapse-fg]').forEach(h=>h.onclick=e=>{if(e.target.closest('[data-check],[data-make],[data-madeprep]'))return;const name=h.dataset.collapseFg;S.collapsedFG[name]=!S.collapsedFG[name];save();render()});
+  document.querySelectorAll('[data-make]').forEach(b=>b.onclick=()=>{const name=b.dataset.make;S.prepChoice[name]=(S.prepChoice[name]==='make'?'stock':'make');if(S.prepChoice[name]!=='make')delete S.prepDone[name];save();render()});
+  document.querySelectorAll('[data-madeprep]').forEach(x=>x.onchange=()=>{const name=x.dataset.madeprep;S.prepDone[name]=x.checked;if(x.checked){const q=remainingDirect[name]||0,out=PREP[name][1],made=Math.ceil(q/out)*out;S.completedPrep.push({name,qty:made,time:Date.now()})}save();render()});
+  const P=plan();
+  // Replenish Prep is an independent stock-building tool. It is deliberately
+  // not tied to the current finished-goods queue: staff can replenish any prep item.
+  const preps=Object.entries(PREP).sort((a,b)=>a[0].localeCompare(b[0]));
+  prepTasks.innerHTML=preps.map(([name,[ins,out]])=>{const target=Math.max(0,Number(S.replenishQty[name]||0));const b=target?Math.ceil(target/out):0,made=b*out,raw={};Object.entries(ins).forEach(([x,a])=>{if(b)add(raw,x,a*b)});const rawText=Object.entries(raw).map(([x,a])=>`${nfmt(a)} × ${x}`).join(' + ')||'Set a quantity to see ingredients';return `<div class="prepCompact ${S.prepDone['replenish:'+name]?'done':''}"><input class="check" type="checkbox" ${S.prepDone['replenish:'+name]?'checked':''} data-replenish-done="${name}" ${target<=0?'disabled':''}><div class="prepDetails"><div class="taskname">${name}</div><div class="taskmeta">${target?`Make ${nfmt(made)} · ${b} craft${b===1?'':'s'} · ${out} per craft`:`${out} per craft`}</div><div class="prepRaw">Needs: ${rawText}</div></div><div class="qtyctl"><button data-rminus="${name}">−</button><input type="number" min="0" value="${target}" data-rqty="${name}"><button data-rplus="${name}">+</button></div></div>`}).join('');
+  document.querySelectorAll('[data-rminus]').forEach(b=>b.onclick=()=>{const n=b.dataset.rminus;S.replenishQty[n]=Math.max(0,(+S.replenishQty[n]||0)-1);delete S.prepDone['replenish:'+n];save();render()});
+  document.querySelectorAll('[data-rplus]').forEach(b=>b.onclick=()=>{const n=b.dataset.rplus;S.replenishQty[n]=(+S.replenishQty[n]||0)+1;delete S.prepDone['replenish:'+n];save();render()});
+  document.querySelectorAll('[data-rqty]').forEach(i=>i.onchange=()=>{const n=i.dataset.rqty;S.replenishQty[n]=Math.max(0,+i.value||0);delete S.prepDone['replenish:'+n];save();render()});
+  document.querySelectorAll('[data-replenish-done]').forEach(x=>x.onchange=()=>{const name=x.dataset.replenishDone,key='replenish:'+name,target=+S.replenishQty[name]||0,out=PREP[name][1],made=Math.ceil(target/out)*out;S.prepDone[key]=x.checked;if(x.checked&&made>0){S.completedPrep.push({name,qty:made,time:Date.now(),source:'replenish'});S.replenishQty[name]=0;delete S.prepDone[key]}save();render()});
+  const raws=Object.entries(P.raw).sort((a,b)=>a[0].localeCompare(b[0]));rawList.innerHTML=raws.length?raws.map(([name,q])=>`<div class="task"><div></div><div><div class="taskname">${name}</div><div class="taskmeta">Bought/raw ingredient</div></div><div class="badge">${nfmt(q)}x</div></div>`).join(''):`<div class="empty">Raw requirements will appear here.</div>`;
+  document.querySelectorAll('[data-check]').forEach(x=>x.onchange=()=>{const [type,name]=x.dataset.check.split('|');if(type==='fg'&&x.checked){const q=S.qty[name]||0;if(q>0){
+      // Snapshot what this finished-good batch actually consumed from stock before
+      // resetting its quantity. Prep is only excluded when it was explicitly
+      // selected for making AND marked as crafted.
+      Object.entries(MENU[name].i).forEach(([ing,amt])=>{
+        const used=amt*q;
+        if(PREP[ing]){
+          const madeHere=S.prepChoice[ing]==='make' && S.prepDone[ing];
+          if(!madeHere){S.stockUsed.push({name:ing,qty:used,time:Date.now()});S.replenishQty[ing]=(+S.replenishQty[ing]||0)+used;}
+        }else{
+          S.stockUsed.push({name:ing,qty:used,time:Date.now()});
+        }
+      });
+      S.completedFG.push({name,qty:q,time:Date.now()});S.qty[name]=0;delete S.fgDone[name];delete S.collapsedFG[name];
+    }save();render();return;}S[type+'Done'][name]=x.checked;save();render()});
+  const fgDoneQty=S.completedFG.reduce((a,r)=>a+r.qty,0),fgTotalQty=selected.reduce((a,[,q])=>a+q,0);const prepDoneQty=S.completedPrep.reduce((a,r)=>a+r.qty,0),prepTotalQty=Object.entries(S.replenishQty||{}).reduce((a,[n,q])=>a+(q>0?Math.ceil(q/PREP[n][1])*PREP[n][1]:0),0);fgDone.textContent=fgDoneQty;fgTotal.textContent=fgTotalQty;prepDone.textContent=prepDoneQty;prepTotal.textContent=prepTotalQty;sFinished.textContent=fgDoneQty;sPrep.textContent=prepDoneQty;sActions.textContent=S.completedFG.length+Object.values(S.prepDone).filter(Boolean).length;sPlanned.textContent=fgTotalQty;updateSummary(false)
+}
+
+function recipeBreakdown(item){
+  const raw={}, prep=[];
+  function walk(name,qty,path){
+    if(MENU[name]){Object.entries(MENU[name].i).forEach(([x,q])=>walk(x,q*qty,path));return}
+    if(PREP[name]){
+      const [ins,out]=PREP[name], batches=qty/out;
+      prep.push({name,qty,path});
+      Object.entries(ins).forEach(([x,q])=>walk(x,q*batches,[...path,name]));
+      return;
+    }
+    add(raw,name,qty);
+  }
+  Object.entries(MENU[item].i).forEach(([x,q])=>walk(x,q,[]));
+  return {raw,prep};
+}
+function showRecipe(name){
+  const m=MENU[name], b=recipeBreakdown(name);
+  recipeTitle.textContent=name;
+  const direct=Object.entries(m.i).map(([x,q])=>`<div class="recipeRow"><span>${x}</span><span>${nfmt(q)}x</span></div>`).join('');
+  const prep=b.prep.length?b.prep.map(x=>`<div class="recipeRow"><span>${x.name}${x.path.length?`<span class="recipeArrow">via ${x.path.join(' → ')}</span>`:''}</span><span>${nfmt(x.qty)}x</span></div>`).join(''):'<div class="recipeRow"><span>No crafted prep required</span><span>—</span></div>';
+  const raw=Object.entries(b.raw).sort((a,b)=>a[0].localeCompare(b[0])).map(([x,q])=>`<div class="recipeRow"><span>${x}</span><span>${nfmt(q)}x</span></div>`).join('');
+  recipeBody.innerHTML=`<div class="recipeBlock"><h4>Recipe / Direct Ingredients</h4><div class="recipeRows">${direct}</div></div><div class="recipeBlock"><h4>Prep Items In This Recipe</h4><div class="recipeRows">${prep}</div><div class="recipeNote">Quantities show the amount needed for one finished item. Batch yields are accounted for proportionally here.</div></div><div class="recipeBlock"><h4>Total Raw Ingredients</h4><div class="recipeRows">${raw||'<div class="recipeRow"><span>None</span><span>—</span></div>'}</div></div>`;
+  recipeModal.classList.remove('hidden');
+}
+function hideRecipe(){recipeModal.classList.add('hidden')}
+closeInfo.onclick=hideRecipe;recipeModal.onclick=e=>{if(e.target===recipeModal)hideRecipe()};document.addEventListener('keydown',e=>{if(e.key==='Escape')hideRecipe()});
+
+function taskHTML(type,name,q,done,meta){return `<label class="task ${done?'done':''}"><input class="check" type="checkbox" ${done?'checked':''} data-check="${type}|${name}"><div><div class="taskname">${name}</div><div class="taskmeta">${meta}</div></div><div class="badge">${nfmt(q)}x</div></label>`}
+function setQty(n,q){S.qty[n]=Math.max(0,Math.floor(Number(q)||0));delete S.fgDone[n];save();render()}
+function updateSummary(show=true){if(!S.active)return;const selected=Object.entries(S.qty).filter(([,q])=>q>0);const end=S.end?new Date(S.end):new Date(),start=new Date(S.start),mins=Math.max(0,Math.round((end-start)/60000));const duration=`${Math.floor(mins/60)}h ${mins%60}m`;const finishedMap={};S.completedFG.forEach(r=>add(finishedMap,r.name,r.qty));const finished=Object.entries(finishedMap);const madeMap={};(S.completedPrep||[]).forEach(r=>add(madeMap,r.name,r.qty));const madePrep=Object.entries(madeMap);const stockMap={};(S.stockUsed||[]).forEach(r=>add(stockMap,r.name,r.qty));
+// Reconcile prep crafted during the shift against prep ingredients consumed from stock.
+// Crafted prep first replaces stock that was used; only any excess is genuinely extra stock.
+const unreplenishedMap={},extraPrepMap={};
+for(const [name,usedQty] of Object.entries(stockMap)){
+  const madeQty=madeMap[name]||0;
+  const remaining=Math.max(0,usedQty-madeQty);
+  if(remaining>0)unreplenishedMap[name]=remaining;
+}
+for(const [name,madeQty] of Object.entries(madeMap)){
+  const usedQty=stockMap[name]||0;
+  const extra=Math.max(0,madeQty-usedQty);
+  if(extra>0)extraPrepMap[name]=extra;
+}
+const stockUsed=Object.entries(unreplenishedMap).sort((a,b)=>a[0].localeCompare(b[0]));
+const extraPrep=Object.entries(extraPrepMap).sort((a,b)=>a[0].localeCompare(b[0]));
+const extraPrepTotal=extraPrep.reduce((a,[,q])=>a+q,0);
+const text=`**Mousey's Craft Shift**\nStaff: ${S.staff||'Not entered'}\nStart: ${start.toLocaleString()}\nFinish: ${end.toLocaleString()}\nShift Time: ${duration}\n\n**Finished Goods Crafted — ${finished.reduce((a,[,q])=>a+q,0)} items**\n${finished.length?finished.map(([n,q])=>`• ${n} x${q}`).join('\n'):'• None ticked'}\n\n**Raw / Prep Materials Crafted — ${madePrep.reduce((a,[,q])=>a+q,0)} units**\n${madePrep.length?madePrep.map(([n,q])=>`• ${n} x${nfmt(q)}`).join('\n'):'• None ticked'}\n\n**Items Used From Stock (Not Replenished)**\n${stockUsed.length?stockUsed.map(([n,q])=>`• ${n} x${nfmt(q)}`).join('\n'):'• None — all consumed prep stock was replenished'}\n\n**Extra Prep Added to Stock — ${nfmt(extraPrepTotal)} units**\n${extraPrep.length?extraPrep.map(([n,q])=>`• ${n} x${nfmt(q)}`).join('\n'):'• None'}\n\nFinished Goods Completed: ${finished.reduce((a,[,q])=>a+q,0)}\nCurrently Queued: ${selected.reduce((a,[,q])=>a+q,0)}`;summary.textContent=text;if(show)summary.classList.remove('hidden');return text}
+newShift.onclick=()=>{if(S.active&&!S.end&&!confirm('Start a new shift and clear the current one?'))return;Object.assign(S,{active:true,start:Date.now(),end:null,staff:staff.value||'',qty:{},fgDone:{},prepDone:{},prepChoice:{},replenishQty:{},completedFG:[],completedPrep:[],stockUsed:[],collapsedFG:{},cat:'All'});save();render()};resetShift.onclick=()=>{if(confirm('Clear the current shift?')){localStorage.removeItem('mouseys_staff_shift_v1');Object.assign(S,{active:false,start:null,end:null,staff:'',qty:{},fgDone:{},prepDone:{},prepChoice:{},replenishQty:{},completedFG:[],completedPrep:[],stockUsed:[],collapsedFG:{},cat:'All'});render()}};staff.oninput=()=>{S.staff=staff.value;save()};clearQty.onclick=()=>{S.qty={};S.fgDone={};S.prepDone={};S.prepChoice={};save();render()};finish.onclick=()=>{S.end=Date.now();save();updateSummary(true);render();setWorkTab('sum')};copy.onclick=async()=>{const t=updateSummary(true);try{await navigator.clipboard.writeText(t);copy.textContent='Copied!';setTimeout(()=>copy.textContent='Copy Discord Summary',1300)}catch{alert('Copy failed — select the summary text manually.')}};
+// Compact right-hand workboard: only one operational list is visible at a time.
+let activeWorkTab="craft";
+function setWorkTab(name){activeWorkTab=name;document.querySelectorAll('[data-tab]').forEach(b=>b.classList.toggle('on',b.dataset.tab===name));document.querySelectorAll('[data-panel]').forEach(p=>p.classList.toggle('on',p.dataset.panel===name));}
+document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>setWorkTab(b.dataset.tab));
+
+function adaptMobileUI(){
+  const mobile=window.matchMedia('(max-width:650px)').matches;
+  const labels={craft:['Craft Queue + Ingredients Needed','Craft + Need'],prep:['Replenish Prep','Prep'],raw:['Raw Shopping','Raw'],sum:['Shift Summary','Summary']};
+  document.querySelectorAll('[data-tab]').forEach(b=>{const pair=labels[b.dataset.tab];if(pair)b.textContent=mobile?pair[1]:pair[0]});
+}
+window.addEventListener('resize',adaptMobileUI);
+adaptMobileUI();
+function tick(){if(S.active&&S.start){const end=S.end||Date.now(),sec=Math.floor((end-S.start)/1000);elapsed.textContent=[Math.floor(sec/3600),Math.floor(sec%3600/60),sec%60].map(x=>String(x).padStart(2,'0')).join(':')}}setInterval(tick,1000);load();render();tick();
+</script></body></html>
