@@ -34,10 +34,43 @@ input[type="number"] {
 .itemIngredientBucket{border:1px solid var(--line);border-radius:9px;background:#081421;overflow:hidden}.itemIngredientHead{padding:6px 8px;background:#0d1c2d;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:8px}.itemIngredientHead strong{font-size:11px;color:#fff}.itemIngredientHead span{font-size:9px;color:var(--muted)}.itemIngredientRows{display:grid}.itemIngredientRows .needRow{border:0;border-radius:0;border-bottom:1px solid #1c344b}.itemIngredientRows .needRow:last-child{border-bottom:0}.sharedTotal{font-size:8px;color:#8fc9ff;white-space:nowrap}.needQtyWrap{display:flex;align-items:center;gap:5px}.needQtyWrap .badge{white-space:nowrap}@media(max-width:700px){.itemIngredientHead{padding:5px 7px}.itemIngredientHead strong{font-size:10px}.sharedTotal{display:none}}
 
 .itemIngredientHead{cursor:pointer;user-select:none}.itemIngredientComplete{display:flex;align-items:center;gap:7px;flex:0 0 auto}.itemIngredientComplete .check{width:18px;height:18px;margin:0;cursor:pointer;accent-color:#2dd4bf}.itemIngredientComplete .badge{font-size:10px}.itemIngredientHeadRight{display:flex;align-items:center;gap:7px}.itemIngredientHeadRight>span{white-space:nowrap}.itemIngredientHead:hover{background:#11253a}.itemIngredientHeadLeft{display:flex;align-items:center;gap:7px;min-width:0}.collapseBtn{width:20px;height:20px;border:1px solid #35516f;border-radius:6px;background:#10243a;color:#bfe0ff;display:grid;place-items:center;padding:0;cursor:pointer;font-size:11px;font-weight:900;flex:0 0 20px}.itemIngredientBucket.collapsed .itemIngredientRows,.itemIngredientBucket.collapsed .embeddedFinish{display:none}.itemIngredientBucket.collapsed .itemIngredientHead{border-bottom:0}.itemIngredientBucket.collapsed .collapseBtn{transform:rotate(-90deg)}
+
+/* Soft category accents and a clear highlight for queued quantities. */
+body{background:radial-gradient(circle at 95% 90%,#39234255,transparent 42%),radial-gradient(circle at 10% -20%,#18375f 0,transparent 38%),var(--bg)}
+.shiftbar{border-color:#36516e;background:linear-gradient(110deg,#132c40,#101d2e 65%)}
+.planner{border-top:3px solid var(--blue)}.rightcol{border-top:3px solid var(--cyan)}
+.catgroup{--accent:#78b7ff;--tint:#142b44;border-color:color-mix(in srgb,var(--accent) 30%,var(--line))}
+.catgroup[data-group="Mains"]{--accent:#ffbd78;--tint:#33271e}
+.catgroup[data-group="Sides"]{--accent:#76dcb2;--tint:#16312b}
+.catgroup[data-group="Desserts"]{--accent:#e9a0d1;--tint:#322238}
+.catgroup[data-group="Drinks"]{--accent:#79cfff;--tint:#173044}
+.cathead{color:var(--accent);background:linear-gradient(90deg,var(--tint),#0c1b2c);border-left:3px solid var(--accent)}
+.gooditem{transition:background .15s,border-color .15s,box-shadow .15s}
+.gooditem:hover{border-color:var(--accent)}
+.gooditem.hasQty{background:var(--tint);border-color:var(--accent);box-shadow:inset 3px 0 var(--accent)}
+.gooditem.hasQty .goodname{color:#fff}.gooditem.hasQty .qtyctl input{color:var(--accent);border-color:var(--accent);background:#081522;font-weight:950}
+.prepCompact.hasQty{background:#153329;border-color:#57d68b;box-shadow:inset 3px 0 #57d68b}
+.prepCompact.hasQty .qtyctl input{color:#9ce9ba;border-color:#57d68b}
+.filter.on,.tab.on{background:linear-gradient(135deg,#204b6d,#264358);border-color:#65b8d4;color:#effcff}
+.itemIngredientHead{background:linear-gradient(100deg,#17374a,#112236)}
+.itemIngredientHead strong{color:#c8f2f0}.itemIngredientComplete .badge{background:#174333;color:#b6f5d4}
+.stat:nth-child(1){border-top:2px solid var(--blue)}.stat:nth-child(2){border-top:2px solid var(--green)}.stat:nth-child(3){border-top:2px solid #c296ec}.stat:nth-child(4){border-top:2px solid var(--amber)}
+.stat:nth-child(1) strong{color:#92c8ff}.stat:nth-child(2) strong{color:#92e8b3}.stat:nth-child(3) strong{color:#d1b1f4}.stat:nth-child(4) strong{color:#ffdc95}
+.summary{border-color:#35566d;background:linear-gradient(135deg,#0b1c2a,#0c1726)}
+
+.logo{width:48px;height:48px;flex:0 0 auto;display:block;object-fit:contain;border-radius:0;background:none;box-shadow:none}
+@media(max-width:650px){.logo{width:38px;height:38px}}
+
+/* Recipe buttons double as small product thumbnails, using the same row space. */
+.productInfo{width:26px;height:26px;flex:0 0 26px;border-radius:6px;border:0;background:transparent;line-height:26px}
+.productInfo:hover{background:#ffffff12}.productThumb{width:26px;height:26px;object-fit:contain;display:block}
+.gooditem{padding:5px;min-height:38px}.goodtitle{flex:1;gap:5px}.goodname{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;white-space:normal;overflow:hidden;line-height:1.18}
+@media(min-width:1001px) and (max-width:1500px){.catitems{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:650px){.productInfo{width:22px;height:22px;flex-basis:22px;line-height:22px}.productThumb{width:22px;height:22px}.gooditem{min-height:34px;padding:4px}.goodtitle{gap:3px}.goodname{font-size:10px}}
 </style>
 </head>
 <body><div class="app">
-<div class="top"><div class="brand"><div class="logo">M</div><div><h1>Mousey's Staff Craft Shift</h1><p>Plan the craft, replenish prep stock, track the shift.</p></div></div><button class="btn primary" id="newShift">+ New Shift</button></div>
+<div class="top"><div class="brand"><img class="logo" src="https://mouseyspizza.spaceturtl.es/image/mouseys_pizza/logo.png" alt="Mousey’s Pizza logo" width="48" height="48"><div><h1>Mousey's Staff Craft Shift</h1><p>Plan the craft, replenish prep stock, track the shift.</p></div></div><button class="btn primary" id="newShift">+ New Shift</button></div>
 <div class="card shiftbar"><input id="staff" placeholder="Staff name / callsign"><span class="pill">Status: <b id="status">No shift</b></span><span class="pill">Started: <b id="started">—</b></span><span class="pill">Elapsed: <b id="elapsed">00:00:00</b></span><button class="btn danger hidden" id="resetShift">Reset Shift</button></div>
 <div id="recipeModal" class="modalBack hidden" role="dialog" aria-modal="true"><div class="modal"><div class="modalHead"><h3 id="recipeTitle">Item details</h3><button class="closeInfo" id="closeInfo" aria-label="Close">×</button></div><div class="modalBody" id="recipeBody"></div></div></div>
 <div id="inactive" class="card section"><div class="empty">Click <b>New Shift</b> to start planning today's craft.</div></div>
@@ -78,6 +111,7 @@ const MENU={
 "Mousey Tuna Pizza":{c:"Pizza",i:{"Raw Pizza Base":1,"Cooked Fish":1,"Shredded Cheese":1,"Diced Onions":1,"Tomato Sauce":1}},
 "Mousey Brusschetta":{c:"Side",i:{"Raw Dough":1,"Tomato":1,"Tomato Sauce":2}},"Mousey Fries":{c:"Side",i:{"Raw Fries":2,"Shredded Cheese":1,"Bacon":1}},"Mousey Mac n Cheese":{c:"Side",i:{"Shredded Cheese":2,"Spaghetti":1}},"Mousey Ravioli Soup":{c:"Side",i:{"Cooked Ground Beef":1,"Lasagna Pasta":1,"Tomato Sauce":1}},
 "Mousey Pasta Fazool":{c:"Pasta",i:{"Tomato Sauce":3,"Spaghetti":1}},"Mousey Primavera":{c:"Pasta",i:{"Shredded Cheese":1,"Spaghetti":1,"Potato":1,"Tomato Sauce":1}},
+"Mousey Banana Split":{c:"Dessert",i:{"Raw Dough":1,"Banana":1,"Caramel Sauce":1}},"Mousey Banoffee Pie":{c:"Dessert",i:{"Caramel Sauce":1,"Banana":1,"Vanilla Icecream":1}},
 "Mousey Cheesecake":{c:"Dessert",i:{"Shredded Cheese":1,"Raw Dough":1,"Strawberry Sauce":2}},"Mousey Donuts":{c:"Dessert",i:{"Raw Dough":1,"Sugar":1,"Icing":1}},"Mousey Icecream":{c:"Dessert",i:{"Chocolate Icecream":1,"Caramel Sauce":1,"Vanilla Icecream":1}},"Mousey Tiramisu":{c:"Dessert",i:{"Brownie Batter":1,"Chocolate":1}},
 "Mousey Coffee":{c:"Drink",i:{"Coffee Beans":1,"Milk":1}},"Mousey Affogato":{c:"Drink",i:{"Mousey Coffee":1,"Milk":1,"Sugar Syrup":1,"Vanilla Icecream":1}},"Mousey Milkshake":{c:"Drink",i:{"Milk":1,"Banana":1,"Icing":1,"Sugar Syrup":1,"Vanilla Icecream":1}},"Mousey Reviver":{c:"Drink",i:{"Energy Drink":1,"Sugar Syrup":1,"Strawberry Sauce":1,"Lemonade":1}},"Mousey Ring King":{c:"Drink",i:{"Energy Drink":1,"Lemonade":1,"Sugar Syrup":2,"Vanilla Icecream":1}},"Grape Dirty Soda":{c:"Drink",i:{"Lemonade":1,"Sugar":1,"Sugar Syrup":1,"Chardonnay Grape":1}},"Mango Dirty Soda":{c:"Drink",i:{"Lemonade":1,"Sugar":2,"Orange":1}},"Melon Dirty Soda":{c:"Drink",i:{"Lemonade":1,"Sugar":1,"Sugar Syrup":1,"Kiwi":1}},"Strawberry Dirty Soda":{c:"Drink",i:{"Strawberry":1,"Sugar":2,"Sugar Syrup":1,"Lemonade":1}}
 };
@@ -85,6 +119,7 @@ const MENU={
 const PREP={
 "Cooked Ground Beef":[{"Ground Beef":1},1],"Cooked Sausages":[{"Raw Sausages":1},1],"Sliced Mushrooms":[{"Mushrooms":15},3],"Spaghetti":[{"Raw Dough":3},3],"Lasagna Pasta":[{"Raw Dough":3},3],"Raw Pizza Base":[{"Raw Dough":1},1],"Tomato Sauce":[{"Tomato":10},2],"Bacon":[{"Raw Bacon":1},1],"Deer Patty":[{"Raw Deer Patty":1},1],"Strawberry Sauce":[{"Sugar":1,"Strawberries":1},1],"Whipped Cream":[{"Milk":1,"Sugar":1},1],"Brownie Batter":[{"Chocolate":2,"Raw Dough":1,"Sugar":1},1],"Icing":[{"Milk":1,"Sugar":1},1],"Sugar Syrup":[{"Jug of Water":1,"Sugar":1},1],"Cut Lettuce":[{"Lettuce":1},8],"Diced Onions":[{"Onion":1},1],"Sliced Tomato":[{"Tomato":1},1],"Raw Fries":[{"Potato":1},1],"Potato Flour":[{"Potato":2},1]
 };
+const PRODUCT_IMAGES={"Mousey BLT Pizza":"https://api.spaceturtl.es/v1/inventory/m_blt.png","Mousey Deer Pizza":"https://api.spaceturtl.es/v1/inventory/m_deer_dairy.png","Mousey Breakfast Pizza":"https://api.spaceturtl.es/v1/inventory/m_breakfast.png","Mousey Capricciosa Pizza":"https://api.spaceturtl.es/v1/inventory/m_capricciosa.png","Mousey Kahuna Pizza":"https://api.spaceturtl.es/v1/inventory/m_kahuna.png","Mousey Prosciutto Pizza":"https://api.spaceturtl.es/v1/inventory/m_proscuitto.png","Mousey Quattro Pizza":"https://api.spaceturtl.es/v1/inventory/m_quattro.png","Mousey Tandori Pizza":"https://api.spaceturtl.es/v1/inventory/m_tandori_chicken.png","Mousey Tuna Pizza":"https://api.spaceturtl.es/v1/inventory/m_tuna.png","Mousey Brusschetta":"https://api.spaceturtl.es/v1/inventory/m_brusschetta.png","Mousey Fries":"https://api.spaceturtl.es/v1/inventory/m_fries.png","Mousey Mac n Cheese":"https://api.spaceturtl.es/v1/inventory/m_mac.png","Mousey Pasta Fazool":"https://api.spaceturtl.es/v1/inventory/m_pasta_fazool.png","Mousey Primavera":"https://api.spaceturtl.es/v1/inventory/m_primavera.png","Mousey Ravioli Soup":"https://api.spaceturtl.es/v1/inventory/m_ravioli_soup.png","Grape Dirty Soda":"https://api.spaceturtl.es/v1/inventory/m_grape_ds.png","Mango Dirty Soda":"https://api.spaceturtl.es/v1/inventory/m_mango_ds.png","Melon Dirty Soda":"https://api.spaceturtl.es/v1/inventory/m_melon_ds.png","Mousey Coffee":"https://api.spaceturtl.es/v1/inventory/m_coffee.png","Mousey Affogato":"https://api.spaceturtl.es/v1/inventory/m_affogato.png","Mousey Milkshake":"https://api.spaceturtl.es/v1/inventory/m_milkshake.png","Mousey Reviver":"https://api.spaceturtl.es/v1/inventory/m_reviver.png","Mousey Ring King":"https://api.spaceturtl.es/v1/inventory/m_ring_king.png","Strawberry Dirty Soda":"https://api.spaceturtl.es/v1/inventory/m_strawberry_ds.png","Mousey Banoffee Pie":"https://api.spaceturtl.es/v1/inventory/m_banoffee.png","Mousey Banana Split":"https://api.spaceturtl.es/v1/inventory/m_bansplit.png","Mousey Cheesecake":"https://api.spaceturtl.es/v1/inventory/m_cheesecake.png","Mousey Donuts":"https://api.spaceturtl.es/v1/inventory/m_donuts.png","Mousey Icecream":"https://api.spaceturtl.es/v1/inventory/m_icecream.png","Mousey Tiramisu":"https://api.spaceturtl.es/v1/inventory/m_tiramasu.png"};
 const MENU_OUTPUTS=new Set(Object.keys(MENU));
 const GROUPS={"Mains":["Pizza","Pasta"],"Sides":["Side"],"Desserts":["Dessert"],"Drinks":["Drink"]};
 const cats=["All","Mains","Sides","Desserts","Drinks"];
@@ -113,7 +148,7 @@ S.collapsedFG=S.collapsedFG||{};
 function render(){document.querySelector('#inactive').classList.toggle('hidden',S.active);document.querySelector('#workspace').classList.toggle('hidden',!S.active);document.querySelector('#resetShift').classList.toggle('hidden',!S.active);document.querySelector('#status').textContent=S.active?(S.end?'Finished':'Active'):'No shift';document.querySelector('#started').textContent=S.start?new Date(S.start).toLocaleString():'—';document.querySelector('#staff').value=S.staff||'';if(!S.active)return;
   filters.innerHTML=cats.map(c=>`<button class="filter ${S.cat===c?'on':''}" data-cat="${c}">${c}</button>`).join('');
   document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{S.cat=b.dataset.cat;save();render()});
-  const visibleGroups=S.cat==='All'?Object.keys(GROUPS):[S.cat];goods.innerHTML=visibleGroups.map(group=>{const items=Object.entries(MENU).filter(([,v])=>uiGroup(v.c)===group);return `<div class="catgroup"><div class="cathead">${group}</div><div class="catitems">${items.map(([name,v])=>`<div class="gooditem"><div class="goodtitle"><button class="infoBtn" data-info="${name}" title="View recipe">i</button><div class="goodname">${name}</div></div><div class="qtyctl"><button data-minus="${name}">−</button><input type="number" min="0" value="${S.qty[name]||0}" data-qty="${name}"><button data-plus="${name}">+</button></div></div>`).join('')}</div></div>`}).join('');
+  const visibleGroups=S.cat==='All'?Object.keys(GROUPS):[S.cat];goods.innerHTML=visibleGroups.map(group=>{const items=Object.entries(MENU).filter(([,v])=>uiGroup(v.c)===group);return `<div class="catgroup" data-group="${group}"><div class="cathead">${group}</div><div class="catitems">${items.map(([name,v])=>`<div class="gooditem ${(S.qty[name]||0)>0?'hasQty':''}"><div class="goodtitle"><button class="infoBtn productInfo" data-info="${name}" title="View ${name} recipe" aria-label="View ${name} recipe"><img class="productThumb" src="${PRODUCT_IMAGES[name]}" alt="" width="26" height="26" decoding="async" onerror="this.hidden=true;this.parentElement.textContent='i'"></button><div class="goodname" title="${name}">${name}</div></div><div class="qtyctl"><button data-minus="${name}">−</button><input type="number" min="0" value="${S.qty[name]||0}" data-qty="${name}"><button data-plus="${name}">+</button></div></div>`).join('')}</div></div>`}).join('');
   document.querySelectorAll('[data-info]').forEach(b=>b.onclick=()=>showRecipe(b.dataset.info));document.querySelectorAll('[data-minus]').forEach(b=>b.onclick=()=>setQty(b.dataset.minus,(S.qty[b.dataset.minus]||0)-1));document.querySelectorAll('[data-plus]').forEach(b=>b.onclick=()=>setQty(b.dataset.plus,(S.qty[b.dataset.plus]||0)+1));document.querySelectorAll('[data-qty]').forEach(i=>i.onchange=()=>setQty(i.dataset.qty,+i.value));
   const selected=Object.entries(S.qty).filter(([,q])=>q>0);
   // Keep ingredient requirements grouped under each unfinished finished-good batch,
@@ -147,7 +182,7 @@ function render(){document.querySelector('#inactive').classList.toggle('hidden',
   // Replenish Prep is an independent stock-building tool. It is deliberately
   // not tied to the current finished-goods queue: staff can replenish any prep item.
   const preps=Object.entries(PREP).sort((a,b)=>a[0].localeCompare(b[0]));
-  prepTasks.innerHTML=preps.map(([name,[ins,out]])=>{const target=Math.max(0,Number(S.replenishQty[name]||0));const b=target?Math.ceil(target/out):0,made=b*out,raw={};Object.entries(ins).forEach(([x,a])=>{if(b)add(raw,x,a*b)});const rawText=Object.entries(raw).map(([x,a])=>`${nfmt(a)} × ${x}`).join(' + ')||'Set a quantity to see ingredients';return `<div class="prepCompact ${S.prepDone['replenish:'+name]?'done':''}"><input class="check" type="checkbox" ${S.prepDone['replenish:'+name]?'checked':''} data-replenish-done="${name}" ${target<=0?'disabled':''}><div class="prepDetails"><div class="taskname">${name}</div><div class="taskmeta">${target?`Make ${nfmt(made)} · ${b} craft${b===1?'':'s'} · ${out} per craft`:`${out} per craft`}</div><div class="prepRaw">Needs: ${rawText}</div></div><div class="qtyctl"><button data-rminus="${name}">−</button><input type="number" min="0" value="${target}" data-rqty="${name}"><button data-rplus="${name}">+</button></div></div>`}).join('');
+  prepTasks.innerHTML=preps.map(([name,[ins,out]])=>{const target=Math.max(0,Number(S.replenishQty[name]||0));const b=target?Math.ceil(target/out):0,made=b*out,raw={};Object.entries(ins).forEach(([x,a])=>{if(b)add(raw,x,a*b)});const rawText=Object.entries(raw).map(([x,a])=>`${nfmt(a)} × ${x}`).join(' + ')||'Set a quantity to see ingredients';return `<div class="prepCompact ${target>0?'hasQty':''} ${S.prepDone['replenish:'+name]?'done':''}"><input class="check" type="checkbox" ${S.prepDone['replenish:'+name]?'checked':''} data-replenish-done="${name}" ${target<=0?'disabled':''}><div class="prepDetails"><div class="taskname">${name}</div><div class="taskmeta">${target?`Make ${nfmt(made)} · ${b} craft${b===1?'':'s'} · ${out} per craft`:`${out} per craft`}</div><div class="prepRaw">Needs: ${rawText}</div></div><div class="qtyctl"><button data-rminus="${name}">−</button><input type="number" min="0" value="${target}" data-rqty="${name}"><button data-rplus="${name}">+</button></div></div>`}).join('');
   document.querySelectorAll('[data-rminus]').forEach(b=>b.onclick=()=>{const n=b.dataset.rminus;S.replenishQty[n]=Math.max(0,(+S.replenishQty[n]||0)-1);delete S.prepDone['replenish:'+n];save();render()});
   document.querySelectorAll('[data-rplus]').forEach(b=>b.onclick=()=>{const n=b.dataset.rplus;S.replenishQty[n]=(+S.replenishQty[n]||0)+1;delete S.prepDone['replenish:'+n];save();render()});
   document.querySelectorAll('[data-rqty]').forEach(i=>i.onchange=()=>{const n=i.dataset.rqty;S.replenishQty[n]=Math.max(0,+i.value||0);delete S.prepDone['replenish:'+n];save();render()});
@@ -200,24 +235,18 @@ closeInfo.onclick=hideRecipe;recipeModal.onclick=e=>{if(e.target===recipeModal)h
 
 function taskHTML(type,name,q,done,meta){return `<label class="task ${done?'done':''}"><input class="check" type="checkbox" ${done?'checked':''} data-check="${type}|${name}"><div><div class="taskname">${name}</div><div class="taskmeta">${meta}</div></div><div class="badge">${nfmt(q)}x</div></label>`}
 function setQty(n,q){S.qty[n]=Math.max(0,Math.floor(Number(q)||0));delete S.fgDone[n];save();render()}
-function updateSummary(show=true){if(!S.active)return;const selected=Object.entries(S.qty).filter(([,q])=>q>0);const end=S.end?new Date(S.end):new Date(),start=new Date(S.start),mins=Math.max(0,Math.round((end-start)/60000));const duration=`${Math.floor(mins/60)}h ${mins%60}m`;const finishedMap={};S.completedFG.forEach(r=>add(finishedMap,r.name,r.qty));const finished=Object.entries(finishedMap);const madeMap={};(S.completedPrep||[]).forEach(r=>add(madeMap,r.name,r.qty));const madePrep=Object.entries(madeMap);const stockMap={};(S.stockUsed||[]).forEach(r=>add(stockMap,r.name,r.qty));
-// Reconcile prep crafted during the shift against prep ingredients consumed from stock.
-// Crafted prep first replaces stock that was used; only any excess is genuinely extra stock.
-const unreplenishedMap={},extraPrepMap={};
-for(const [name,usedQty] of Object.entries(stockMap)){
-  const madeQty=madeMap[name]||0;
-  const remaining=Math.max(0,usedQty-madeQty);
-  if(remaining>0)unreplenishedMap[name]=remaining;
+function updateSummary(show=true){
+  if(!S.active)return;
+  const finishedMap={},madeMap={};
+  (S.completedFG||[]).forEach(r=>add(finishedMap,r.name,r.qty));
+  (S.completedPrep||[]).forEach(r=>add(madeMap,r.name,r.qty));
+  const finished=Object.entries(finishedMap),madePrep=Object.entries(madeMap);
+  const text=`**Finished Goods Crafted — ${nfmt(finished.reduce((a,[,q])=>a+q,0))} items**\n${finished.length?finished.map(([n,q])=>`• ${n} x${nfmt(q)}`).join('\n'):'• None ticked'}\n\n**Raw / Prep Materials Crafted — ${nfmt(madePrep.reduce((a,[,q])=>a+q,0))} units**\n${madePrep.length?madePrep.map(([n,q])=>`• ${n} x${nfmt(q)}`).join('\n'):'• None ticked'}`;
+  summary.textContent=text;
+  if(show)summary.classList.remove('hidden');
+  return text;
 }
-for(const [name,madeQty] of Object.entries(madeMap)){
-  const usedQty=stockMap[name]||0;
-  const extra=Math.max(0,madeQty-usedQty);
-  if(extra>0)extraPrepMap[name]=extra;
-}
-const stockUsed=Object.entries(unreplenishedMap).sort((a,b)=>a[0].localeCompare(b[0]));
-const extraPrep=Object.entries(extraPrepMap).sort((a,b)=>a[0].localeCompare(b[0]));
-const extraPrepTotal=extraPrep.reduce((a,[,q])=>a+q,0);
-const text=`**Mousey's Craft Shift**\nStaff: ${S.staff||'Not entered'}\nStart: ${start.toLocaleString()}\nFinish: ${end.toLocaleString()}\nShift Time: ${duration}\n\n**Finished Goods Crafted — ${finished.reduce((a,[,q])=>a+q,0)} items**\n${finished.length?finished.map(([n,q])=>`• ${n} x${q}`).join('\n'):'• None ticked'}\n\n**Raw / Prep Materials Crafted — ${madePrep.reduce((a,[,q])=>a+q,0)} units**\n${madePrep.length?madePrep.map(([n,q])=>`• ${n} x${nfmt(q)}`).join('\n'):'• None ticked'}\n\n**Items Used From Stock (Not Replenished)**\n${stockUsed.length?stockUsed.map(([n,q])=>`• ${n} x${nfmt(q)}`).join('\n'):'• None — all consumed prep stock was replenished'}\n\n**Extra Prep Added to Stock — ${nfmt(extraPrepTotal)} units**\n${extraPrep.length?extraPrep.map(([n,q])=>`• ${n} x${nfmt(q)}`).join('\n'):'• None'}\n\nFinished Goods Completed: ${finished.reduce((a,[,q])=>a+q,0)}\nCurrently Queued: ${selected.reduce((a,[,q])=>a+q,0)}`;summary.textContent=text;if(show)summary.classList.remove('hidden');return text}
+
 newShift.onclick=()=>{if(S.active&&!S.end&&!confirm('Start a new shift and clear the current one?'))return;Object.assign(S,{active:true,start:Date.now(),end:null,staff:staff.value||'',qty:{},fgDone:{},prepDone:{},prepChoice:{},replenishQty:{},completedFG:[],completedPrep:[],stockUsed:[],collapsedFG:{},cat:'All'});save();render()};resetShift.onclick=()=>{if(confirm('Clear the current shift?')){localStorage.removeItem('mouseys_staff_shift_v1');Object.assign(S,{active:false,start:null,end:null,staff:'',qty:{},fgDone:{},prepDone:{},prepChoice:{},replenishQty:{},completedFG:[],completedPrep:[],stockUsed:[],collapsedFG:{},cat:'All'});render()}};staff.oninput=()=>{S.staff=staff.value;save()};clearQty.onclick=()=>{S.qty={};S.fgDone={};S.prepDone={};S.prepChoice={};save();render()};finish.onclick=()=>{S.end=Date.now();save();updateSummary(true);render();setWorkTab('sum')};copy.onclick=async()=>{const t=updateSummary(true);try{await navigator.clipboard.writeText(t);copy.textContent='Copied!';setTimeout(()=>copy.textContent='Copy Discord Summary',1300)}catch{alert('Copy failed — select the summary text manually.')}};
 // Compact right-hand workboard: only one operational list is visible at a time.
 let activeWorkTab="craft";
